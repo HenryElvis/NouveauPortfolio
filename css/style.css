@@ -1,6 +1,10 @@
 h1, p {
   font-family: pac0;
   text-align: center;
+  font-size: 6rem;
+}
+h1:first-child:hover, p:first-child:hover {
+  color: salmon;
 }
 
 p {

@@ -4,7 +4,16 @@ $pacman: orange;
 h1, p
 {
     font-family: pac0;
-    text-align: center;;
+    text-align: center;
+    font-size: 6rem;
+
+    &:first-child
+    {
+        &:hover
+        {
+            color: $color;
+        }
+    }
 }
 
 p
