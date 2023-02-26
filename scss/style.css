@@ -1,0 +1,57 @@
+body {
+  background: linear-gradient(0.25turn, #280E2F, #121345);
+}
+
+#title {
+  font-family: pac0;
+  text-align: center;
+}
+
+h1 + p {
+  color: #FFC300;
+  font-size: 4em;
+  letter-spacing: 0.3em;
+}
+
+h1 {
+  color: #FFFFFF;
+  font-size: 6em;
+  text-shadow: #776F87 4px 5px;
+  animation: scale 3s infinite;
+}
+
+h2 {
+  color: #FFFFFF;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+p {
+  color: #FFFFFF;
+}
+
+#etude section {
+  display: flex;
+  justify-content: space-evenly;
+}
+#etude h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+#etude > section > div {
+  border: #FFFFFF 1px solid;
+  border-radius: 1em;
+  padding: 1em;
+  width: 15rem;
+  height: 20rem;
+}/*# sourceMappingURL=style.css.map */
