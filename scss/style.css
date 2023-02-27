@@ -45,15 +45,24 @@ p {
   flex-wrap: wrap;
   gap: 3em;
 }
-#etude h2 {
-  font-size: 2em;
-  text-align: center;
-}
-
-#etude > section > div {
+#etude section div {
   border: #FFFFFF 1px solid;
   border-radius: 1em;
   padding: 1em;
   width: 15rem;
   height: 20rem;
+}
+#etude h2 {
+  font-size: 2em;
+  text-align: center;
+}
+
+footer section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1em;
+}
+footer section div p {
+  font-size: 1.5em;
 }/*# sourceMappingURL=style.css.map */
