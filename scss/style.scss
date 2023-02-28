@@ -11,6 +11,40 @@ body
 {
     font-family: pac0;
     text-align: center;
+
+    i
+    {
+        color: $pacman;
+        font-size: 2em;
+
+        text-align: end;
+    }
+}
+
+#terminal
+{
+    border: black 0.5em solid;
+    border-radius: 1em;
+
+    width: 70em;
+    height: 30em;
+
+    margin: 0 auto;
+    margin-top: 3em;
+
+    background-color: rgba(0, 0, 0, 0.3);
+
+    p
+    {
+        color: $pacman;
+        font-size: 1em;
+        margin: 1em;
+
+        span
+        {
+            text-decoration: underline;
+        }
+    }
 }
 
 h1 + p
@@ -109,5 +143,22 @@ footer
 
             transform: scale(1.1);
         }
+    }
+}
+
+@media (max-width: 1200px)
+{
+    #terminal
+    {
+        width: 30em;
+        height: 30em;
+    }
+}
+
+@media (max-width: 850px)
+{
+    h1
+    {
+        font-size: 5em;
     }
 }

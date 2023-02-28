@@ -6,6 +6,29 @@ body {
   font-family: pac0;
   text-align: center;
 }
+#title i {
+  color: #FFC300;
+  font-size: 2em;
+  text-align: end;
+}
+
+#terminal {
+  border: black 0.5em solid;
+  border-radius: 1em;
+  width: 70em;
+  height: 30em;
+  margin: 0 auto;
+  margin-top: 3em;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#terminal p {
+  color: #FFC300;
+  font-size: 1em;
+  margin: 1em;
+}
+#terminal p span {
+  text-decoration: underline;
+}
 
 h1 + p {
   color: #FFC300;
@@ -81,4 +104,16 @@ footer section :hover {
 }
 footer section :hover p, footer section :hover i {
   color: #FFC300;
+}
+
+@media (max-width: 1200px) {
+  #terminal {
+    width: 30em;
+    height: 30em;
+  }
+}
+@media (max-width: 850px) {
+  h1 {
+    font-size: 5em;
+  }
 }/*# sourceMappingURL=style.css.map */
