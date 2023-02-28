@@ -44,6 +44,17 @@ body
         {
             text-decoration: underline;
         }
+
+        input
+        {
+            color: $text_color;
+            caret-color: #FFC300;
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            width: 40em;
+            outline: none;
+            font-size: 1em;
+        }
     }
 }
 
@@ -122,15 +133,20 @@ footer
 
         div
         {
-            i
+            a
             {
-                font-size: 2em;
-                color: #FFFFFF;
-            }
+                text-decoration: none;
 
-            p
-            {
-                font-size: 1.5em;
+                i
+                {
+                    font-size: 2em;
+                    color: #FFFFFF;
+                }
+    
+                p
+                {
+                    font-size: 1.5em;
+                }
             }
         }
 
@@ -152,6 +168,14 @@ footer
     {
         width: 30em;
         height: 30em;
+
+        p
+        {
+            input
+            {
+                width: 15em;
+            }
+        }
     }
 }
 
@@ -162,3 +186,8 @@ footer
         font-size: 5em;
     }
 }
+
+// TODO : 
+// Clean with mixins / extends ...
+// Add some grid for projects
+// Structure folder and files

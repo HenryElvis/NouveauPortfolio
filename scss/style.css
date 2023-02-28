@@ -29,6 +29,15 @@ body {
 #terminal p span {
   text-decoration: underline;
 }
+#terminal p input {
+  color: #FFFFFF;
+  caret-color: #FFC300;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  width: 40em;
+  outline: none;
+  font-size: 1em;
+}
 
 h1 + p {
   color: #FFC300;
@@ -92,11 +101,14 @@ footer section {
   gap: 1em;
   text-align: center;
 }
-footer section div i {
+footer section div a {
+  text-decoration: none;
+}
+footer section div a i {
   font-size: 2em;
   color: #FFFFFF;
 }
-footer section div p {
+footer section div a p {
   font-size: 1.5em;
 }
 footer section :hover {
@@ -110,6 +122,9 @@ footer section :hover p, footer section :hover i {
   #terminal {
     width: 30em;
     height: 30em;
+  }
+  #terminal p input {
+    width: 15em;
   }
 }
 @media (max-width: 850px) {
