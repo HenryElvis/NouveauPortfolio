@@ -1,10 +1,19 @@
 body {
   background: linear-gradient(0.25turn, #280E2F, #121345);
+  background-repeat: no-repeat;
 }
 
 #title {
   font-family: pac0;
   text-align: center;
+  width: 70em;
+  margin: 0 auto;
+}
+#title h1 {
+  color: #FFFFFF;
+  font-size: 6em;
+  text-shadow: #776F87 4px 5px;
+  animation: scale 3s infinite;
 }
 #title i {
   color: #FFC300;
@@ -12,6 +21,17 @@ body {
   text-align: end;
 }
 
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 #terminal {
   border: black 0.5em solid;
   border-radius: 2em;
@@ -45,32 +65,17 @@ h1 + p {
   letter-spacing: 0.3em;
 }
 
-h1 {
-  color: #FFFFFF;
-  font-size: 6em;
-  text-shadow: #776F87 4px 5px;
-  animation: scale 3s infinite;
-}
-
 h2 {
   color: #FFFFFF;
 }
 
-@keyframes scale {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 p {
   color: #FFFFFF;
 }
 
+#etude {
+  margin: 0 auto;
+}
 #etude section {
   display: flex;
   justify-content: space-evenly;
@@ -119,6 +124,9 @@ footer section :hover p, footer section :hover i {
 }
 
 @media (max-width: 1200px) {
+  #title {
+    width: 50em;
+  }
   #terminal {
     width: 30em;
     height: 30em;
@@ -128,6 +136,9 @@ footer section :hover p, footer section :hover i {
   }
 }
 @media (max-width: 850px) {
+  #title {
+    width: 10em;
+  }
   h1 {
     font-size: 5em;
   }
