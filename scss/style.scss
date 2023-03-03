@@ -6,6 +6,7 @@ body
 {
     background: linear-gradient(0.25turn, $background_color_gradient);
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #title
@@ -15,13 +16,22 @@ body
 
     width: 70em;
     margin: 0 auto;
-    
+
     h1
     {
         color: $text_color;
         font-size: 6em;
         text-shadow: #776F87 4px 5px;
         animation: scale 3s infinite;
+
+
+    }
+
+    p
+    {
+        color: $pacman;
+        font-size: 4em;
+        letter-spacing: 0.3em;
     }
 
     i
@@ -77,28 +87,11 @@ body
     }
 }
 
-h1 + p
-{
-    color: $pacman;
-    font-size: 4em;
-    letter-spacing: 0.3em;
-}
-
-h2
-{
-    color: $text_color;
-}
-
-p
-{
-    color: $text_color;
-}
-
-#etude
+.description
 {
     margin: 0 auto;
 
-    section
+    article
     {
         display: flex;
         justify-content: space-evenly;
@@ -113,13 +106,35 @@ p
             padding: 1em;
             width: 15rem;
             height: 20rem;
+
+            p
+            {
+                color: $text_color;
+            }
         }
     }
 
     h2
     {
+        color: $text_color;
         font-size: 2em;
         text-align: center;
+    }
+}
+
+#project
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 20em);
+    justify-content: center;
+    grid-gap: 3em;
+
+    div
+    {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
     }
 }
 
@@ -127,7 +142,7 @@ footer
 {
     margin-top: 3em;
 
-    section
+    article
     {
         display: flex;
         justify-content: space-evenly;
@@ -152,6 +167,7 @@ footer
                 p
                 {
                     font-size: 1.5em;
+                    color: $text_color;
                 }
             }
         }
@@ -168,11 +184,29 @@ footer
     }
 }
 
-@media (max-width: 1200px)
+@media screen and (max-width: 1600px) 
+{
+    #title
+    {
+        width: 60em;
+
+        h1
+        {
+            font-size: 5rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px)
 {
     #title
     {
         width: 50em;
+
+        h1
+        {
+            font-size: 4rem;
+        }
     }
 
     #terminal
@@ -190,21 +224,39 @@ footer
     }
 }
 
-@media (max-width: 850px)
+@media screen and (max-width: 1000px)
 {
     #title
     {
-        width: 10em;
-    }
+        width: 40em;
 
-    h1
+        h1
+        {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 850px)
+{
+    #title
     {
-        font-size: 5em;
+        width: 40em;
+
+        h1
+        {
+            font-size: 3rem;
+        }
+
+        p
+        {
+            font-size: 2rem;
+            letter-spacing: 0.3em;
+        }
     }
 }
 
 // TODO : 
 // Clean with mixins / extends ...
 // Add some grid for projects
-// Background gradient
 // Structure folder and files
