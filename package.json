@@ -18,5 +18,9 @@
   "homepage": "https://github.com/HenryElvis/NouveauPortfolio#readme",
   "dependencies": {
     "sass": "^1.57.1"
-  }
+  },
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  },
+  "keywords": []
 }
