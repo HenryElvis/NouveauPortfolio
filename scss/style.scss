@@ -128,15 +128,20 @@ body
     grid-template-rows: repeat(1, 1fr);
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     
-    grid-gap: 3em;
+    grid-gap: 1em;
     margin-top: 3em;
 
-    border: green 1px solid;
+    justify-items: center;
+    align-items: center;
 
     div
     {
-        border: red 1px solid;
-        justify-self: center;
+        width: 20rem;
+
+        p
+        {
+            color: $text_color;
+        }
     }
 }
 
