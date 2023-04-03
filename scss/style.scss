@@ -263,6 +263,41 @@ footer
     }
 }
 
+#cmd {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    height: 300px;
+    padding: 10px;
+  }
+  
+  #output {
+    margin-bottom: 10px;
+  }
+  
+  #input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: monospace;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+  }
+  
+  #submit {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+
 // TODO : 
 // Clean with mixins / extends ...
 // Add some grid for projects
