@@ -27,6 +27,9 @@ class CMD {
             this.result = "Output:\n" + "Email :";
           this.writeOutput("Email : contact@monportfolio.com \n Téléphone : 01 23 45 67 89");
           break;
+        case "clear":
+            this.clearCommand();
+            break;
         default:
             this.result = "Output:\n" + `Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`;
           this.writeOutput(`Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`);
@@ -48,11 +51,12 @@ class CMD {
 
 
 const cmd = new CMD("input", "output");
-
-(document.getElementById("submit") as HTMLButtonElement).addEventListener("click", () => {
-    const command = cmd.inputElement.value;
-    cmd.clearCommand();
-    cmd.runCommand(command);
-    cmd.showPrompt();
-  });
   
+this.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const command = cmd.inputElement.value;
+      cmd.clearCommand();
+      cmd.runCommand(command);
+      cmd.showPrompt();
+    }
+  });

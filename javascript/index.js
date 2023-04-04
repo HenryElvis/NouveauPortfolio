@@ -22,6 +22,9 @@ var CMD = /** @class */ (function () {
                 this.result = "Output:\n" + "Email :";
                 this.writeOutput("Email : contact@monportfolio.com \n Téléphone : 01 23 45 67 89");
                 break;
+            case "clear":
+                this.clearCommand();
+                break;
             default:
                 this.result = "Output:\n" + "Commande inconnue : ".concat(command, ". Tapez 'help' pour afficher la liste des commandes disponibles.");
                 this.writeOutput("Commande inconnue : ".concat(command, ". Tapez 'help' pour afficher la liste des commandes disponibles."));
@@ -40,9 +43,11 @@ var CMD = /** @class */ (function () {
     return CMD;
 }());
 var cmd = new CMD("input", "output");
-document.getElementById("submit").addEventListener("click", function () {
-    var command = cmd.inputElement.value;
-    cmd.clearCommand();
-    cmd.runCommand(command);
-    cmd.showPrompt();
+this.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+        var command = cmd.inputElement.value;
+        cmd.clearCommand();
+        cmd.runCommand(command);
+        cmd.showPrompt();
+    }
 });

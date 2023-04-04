@@ -13,17 +13,17 @@
         <h1 translate="no">P1RTF1L!1</h1>
         <p>12222222222</p>
 
-        <i class="fa-solid fa-terminal fa-bounce"></i>
-
+        <button id="cmd-toggle-btn">
+            <i class="fa-solid fa-terminal fa-bounce"></i>
+        </button>
     </section>
 
     <section id="terminal">
-        <div>
-            <p>
-                <span>elvis@DESKTOP</span>: $
-                <input type="text" autofocus>
-            </p>
-        </div>
+        <div id="output"></div>
+        <p id="cmd-input">
+            <span>elvis@portfolio:~$</span>
+            <input type="text" autofocus id="input">
+        </p>
     </section>
 
     <section>
@@ -121,11 +121,7 @@
         </div>
     </section>
 
-    <div id="cmd">
-        <div id="output"></div>
-        <input type="text" id="input">
-        <button id="submit">Envoyer</button>
-      </div>
+
       
 
 </body>
