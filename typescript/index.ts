@@ -49,7 +49,6 @@ class CMD {
     }
   }
 
-
 const cmd = new CMD("input", "output");
   
 this.addEventListener("keydown", (e) => {
@@ -60,3 +59,13 @@ this.addEventListener("keydown", (e) => {
       cmd.showPrompt();
     }
   });
+
+const titleAnim = document.getElementById("titleAnim")!;
+
+window.addEventListener("blur", () => {
+    titleAnim.style.animationPlayState = "paused";
+});
+
+window.addEventListener("focus", () => {
+    titleAnim.style.animationPlayState = "running";
+});

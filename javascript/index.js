@@ -51,3 +51,10 @@ this.addEventListener("keydown", function (e) {
         cmd.showPrompt();
     }
 });
+var titleAnim = document.getElementById("titleAnim");
+window.addEventListener("blur", function () {
+    titleAnim.style.animationPlayState = "paused";
+});
+window.addEventListener("focus", function () {
+    titleAnim.style.animationPlayState = "running";
+});

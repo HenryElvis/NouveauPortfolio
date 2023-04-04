@@ -23,8 +23,6 @@ body
         font-size: 6em;
         text-shadow: #776F87 4px 5px;
         animation: scale 3s infinite;
-
-
     }
 
     p
@@ -38,7 +36,6 @@ body
     {
         color: $pacman;
         font-size: 2em;
-
         text-align: end;
     }
 }
@@ -48,6 +45,28 @@ body
     0% { transform: scale(1); }
     50% { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+
+#cmd-toggle-btn
+{
+    // position: absolute;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: $text_color;
+    font-size: 1em;
+    cursor: pointer;
+    outline: none;
+
+    :hover
+    {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 }
 
 #terminal
@@ -263,19 +282,13 @@ footer
     }
 }
 
-#cmd {
-    background-color: black;
-    color: white;
-    font-family: monospace;
-    height: 300px;
-    padding: 10px;
-  }
-  
-  #output {
+#output
+{
     margin-bottom: 10px;
-  }
+}
   
-  #input {
+#input
+{
     background-color: transparent;
     border: none;
     color: white;
@@ -284,9 +297,10 @@ footer
     margin: 0;
     padding: 0;
     width: 80%;
-  }
+}
   
-  #submit {
+#submit 
+{
     background-color: transparent;
     border: none;
     color: white;
@@ -295,7 +309,7 @@ footer
     font-size: inherit;
     margin: 0;
     padding: 0;
-  }
+}
 
 // TODO : 
 // Clean with mixins / extends ...

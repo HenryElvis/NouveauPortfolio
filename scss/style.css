@@ -38,6 +38,24 @@ body {
     transform: scale(1);
   }
 }
+#cmd-toggle-btn {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1em;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.5em;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  font-size: 1em;
+  cursor: pointer;
+  outline: none;
+}
+#cmd-toggle-btn :hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 #terminal {
   border: black 0.5em solid;
   border-radius: 2em;
@@ -179,14 +197,6 @@ footer article :hover p, footer article :hover i {
     letter-spacing: 0.3em;
   }
 }
-#cmd {
-  background-color: black;
-  color: white;
-  font-family: monospace;
-  height: 300px;
-  padding: 10px;
-}
-
 #output {
   margin-bottom: 10px;
 }
