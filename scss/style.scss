@@ -82,6 +82,11 @@ body
 
     background-color: rgba(0, 0, 0, 0.3);
 
+    output
+    {
+        margin-bottom: 10px;
+    }
+
     p
     {
         color: $pacman;
@@ -97,11 +102,19 @@ body
         {
             color: $text_color;
             caret-color: #FFC300;
-            background-color: rgba(0, 0, 0, 0);
             border: none;
             width: 50em;
             outline: none;
             font-size: 1em;
+
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-family: monospace;
+            font-size: inherit;
+            margin: 0;
+            padding: 0;
+            width: 80%;
         }
     }
 }
@@ -280,35 +293,6 @@ footer
             letter-spacing: 0.3em;
         }
     }
-}
-
-#output
-{
-    margin-bottom: 10px;
-}
-  
-#input
-{
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-family: monospace;
-    font-size: inherit;
-    margin: 0;
-    padding: 0;
-    width: 80%;
-}
-  
-#submit 
-{
-    background-color: transparent;
-    border: none;
-    color: white;
-    cursor: pointer;
-    font-family: monospace;
-    font-size: inherit;
-    margin: 0;
-    padding: 0;
 }
 
 // TODO : 
