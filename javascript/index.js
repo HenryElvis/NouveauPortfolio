@@ -5,9 +5,12 @@ var CMD = /** @class */ (function () {
         this.inputElement = document.getElementById(inputId);
         this.outputElement = document.getElementById(outputId);
     }
+    CMD.prototype.focusInput = function () {
+        this.inputElement.focus();
+    };
     CMD.prototype.showPrompt = function () {
         this.inputElement.value = "";
-        this.inputElement.focus();
+        this.focusInput();
     };
     CMD.prototype.runCommand = function (command) {
         switch (command) {
@@ -47,6 +50,10 @@ this.addEventListener("keydown", function (e) {
         cmd.runCommand(command);
         cmd.showPrompt();
     }
+});
+var cmdContainer = document.getElementById("terminal");
+cmdContainer.addEventListener("click", function () {
+    cmd.focusInput();
 });
 var titleAnim = document.getElementById("titleAnim");
 window.addEventListener("blur", function () {

@@ -8,9 +8,14 @@ class CMD {
       this.outputElement = document.getElementById(outputId) as HTMLDivElement;
     }
     
+    public focusInput()
+    {
+        this.inputElement.focus();
+    }
+
     public showPrompt() {
       this.inputElement.value = "";
-      this.inputElement.focus();
+      this.focusInput();
     }
     
     public runCommand(command: string) {
@@ -55,6 +60,12 @@ this.addEventListener("keydown", (e) => {
       cmd.showPrompt();
     }
   });
+
+const cmdContainer = document.getElementById("terminal")!;
+
+cmdContainer.addEventListener("click", () => {
+  cmd.focusInput();
+});
 
 const titleAnim = document.getElementById("titleAnim")!;
 
