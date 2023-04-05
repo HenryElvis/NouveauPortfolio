@@ -21,11 +21,11 @@ class CMD {
       switch(command) {
         case "help":
             this.result = "Output:\n" + "Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact";
-          this.writeOutput("Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact");
+          this.writeOutput("Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact \n clear - efface l'écran");
           break;
         case "contact":
             this.result = "Output:\n" + "Email :";
-          this.writeOutput("Email : contact@monportfolio.com \n Téléphone : 01 23 45 67 89");
+          this.writeOutput("Email : elvishenry2402@gmail.com \n Téléphone : 07 68 94 94 89");
           break;
         case "clear":
             this.clearCommand();
