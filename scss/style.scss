@@ -62,11 +62,6 @@ body
     font-size: 1em;
     cursor: pointer;
     outline: none;
-
-    :hover
-    {
-        background-color: rgba(0, 0, 0, 0.5);
-    }
 }
 
 #terminal
@@ -102,8 +97,6 @@ body
         {
             color: $text_color;
             caret-color: #FFC300;
-            border: none;
-            width: 50em;
             outline: none;
             font-size: 1em;
 
@@ -111,7 +104,6 @@ body
             border: none;
             color: white;
             font-family: monospace;
-            font-size: inherit;
             margin: 0;
             padding: 0;
             width: 80%;

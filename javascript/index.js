@@ -1,7 +1,4 @@
 "use strict";
-var age = "5";
-var myName = "Elvis";
-// alert(myName);
 var CMD = /** @class */ (function () {
     function CMD(inputId, outputId) {
         this.result = '';
