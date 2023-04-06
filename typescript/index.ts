@@ -8,7 +8,7 @@ class CMD {
       this.inputElement = document.getElementById(inputId) as HTMLInputElement;
       this.outputElement = document.getElementById(outputId) as HTMLDivElement;
     }
-    
+
     public focusInput()
     {
         this.inputElement.focus();
@@ -79,6 +79,7 @@ cmdButton.addEventListener("click", () =>
   }
   else
   {
+    cmdContainer.scrollIntoView({behavior: "smooth"});
     cmd.clearCommand();
     cmd.focusInput();
   }

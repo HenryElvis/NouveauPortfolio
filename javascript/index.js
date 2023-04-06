@@ -63,6 +63,7 @@ cmdButton.addEventListener("click", function () {
         cmd.inputElement.blur();
     }
     else {
+        cmdContainer.scrollIntoView({ behavior: "smooth" });
         cmd.clearCommand();
         cmd.focusInput();
     }
