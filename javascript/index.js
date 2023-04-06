@@ -1,6 +1,7 @@
 "use strict";
 var CMD = /** @class */ (function () {
     function CMD(inputId, outputId) {
+        this.isCmdHide = true;
         this.result = '';
         this.inputElement = document.getElementById(inputId);
         this.outputElement = document.getElementById(outputId);
@@ -44,6 +45,8 @@ var CMD = /** @class */ (function () {
 }());
 var cmd = new CMD("input", "output");
 this.addEventListener("keydown", function (e) {
+    if (cmd.isCmdHide)
+        return;
     if (e.key === "Enter") {
         var command = cmd.inputElement.value;
         cmd.clearCommand();
@@ -52,6 +55,18 @@ this.addEventListener("keydown", function (e) {
     }
 });
 var cmdContainer = document.getElementById("terminal");
+var cmdButton = document.getElementById("cmd-toggle-btn");
+cmdButton.addEventListener("click", function () {
+    cmdContainer.classList.toggle("hidden");
+    cmd.isCmdHide = !cmd.isCmdHide;
+    if (cmd.isCmdHide) {
+        cmd.inputElement.blur();
+    }
+    else {
+        cmd.clearCommand();
+        cmd.focusInput();
+    }
+});
 cmdContainer.addEventListener("click", function () {
     cmd.focusInput();
 });

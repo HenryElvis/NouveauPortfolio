@@ -1,5 +1,6 @@
 class CMD {
     public inputElement: HTMLInputElement;
+    public isCmdHide = true;
     private outputElement: HTMLDivElement;
     private result: string = '';
 
@@ -52,27 +53,50 @@ class CMD {
 
 const cmd = new CMD("input", "output");
   
-this.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") {
-      const command = cmd.inputElement.value;
-      cmd.clearCommand();
-      cmd.runCommand(command);
-      cmd.showPrompt();
-    }
-  });
+this.addEventListener("keydown", (e) => 
+{
+  if (cmd.isCmdHide) return;
+
+  if (e.key === "Enter") {
+    const command = cmd.inputElement.value;
+    cmd.clearCommand();
+    cmd.runCommand(command);
+    cmd.showPrompt();
+  }
+});
 
 const cmdContainer = document.getElementById("terminal")!;
+const cmdButton = document.getElementById("cmd-toggle-btn")!;
 
-cmdContainer.addEventListener("click", () => {
+cmdButton.addEventListener("click", () => 
+{
+  cmdContainer.classList.toggle("hidden");
+  cmd.isCmdHide = !cmd.isCmdHide;
+
+  if (cmd.isCmdHide)
+  {
+    cmd.inputElement.blur();
+  }
+  else
+  {
+    cmd.clearCommand();
+    cmd.focusInput();
+  }
+});
+
+cmdContainer.addEventListener("click", () => 
+{
   cmd.focusInput();
 });
 
 const titleAnim = document.getElementById("titleAnim")!;
 
-window.addEventListener("blur", () => {
-    titleAnim.style.animationPlayState = "paused";
+window.addEventListener("blur", () => 
+{
+  titleAnim.style.animationPlayState = "paused";
 });
 
-window.addEventListener("focus", () => {
-    titleAnim.style.animationPlayState = "running";
+window.addEventListener("focus", () => 
+{
+  titleAnim.style.animationPlayState = "running";
 });
