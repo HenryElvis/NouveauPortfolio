@@ -7,13 +7,18 @@ class CMD {
     public isCmdHide = true;
     private outputElement: HTMLDivElement;
 
-    private commands: CommandsList = {
-        help: 'help - affiche cette aide \n contact - affiche mes informations de contact',
-        clear: "",
-        contact: "contact - affiche mes informations de contact",
+    private commands: CommandsList = 
+    {
+      help: 'help - affiche cette aide \n contact - affiche mes informations de contact',
+      clear: "",
+      contact: "contact - affiche mes informations de contact",
+      "contact -email": "elvishenry2402@gmail.com",
+      "contact -telephone": "07 68 94 94 89",
+      "adresse": "Place du marché, 92200 Neuilly-sur-Seine",
     };
 
-    constructor(inputId: string, outputId: string) {
+    constructor(inputId: string, outputId: string) 
+    {
       this.inputElement = document.getElementById(inputId) as HTMLInputElement;
       this.outputElement = document.getElementById(outputId) as HTMLDivElement;
     }
@@ -23,29 +28,33 @@ class CMD {
         this.inputElement.focus();
     }
 
-    public showPrompt() {
+    public showPrompt() 
+    {
       this.inputElement.value = "";
       this.focusInput();
     }
     
-    public runCommand(command: string) {
+    public runCommand(command: string) 
+    {
       if (command in this.commands) 
       {
         if (command == "clear")
           this.clearCommand();
         else
-          this.writeOutput("Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact \n clear - efface l'écran");
+          this.writeOutput(this.commands[command]);
       }
       else
         this.writeOutput(`Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`);
     }
 
-    public clearCommand() {
-        this.inputElement.value = '';
-        this.outputElement.textContent = '';
-      }
+    public clearCommand() 
+    {
+      this.inputElement.value = '';
+      this.outputElement.textContent = '';
+    }
     
-    private writeOutput(message: string) {
+    private writeOutput(message: string) 
+    {
       const p = document.createElement("p");
       p.innerText = message;
       this.outputElement.appendChild(p);
@@ -58,7 +67,8 @@ this.addEventListener("keydown", (e) =>
 {
   if (cmd.isCmdHide) return;
 
-  if (e.key === "Enter") {
+  if (e.key === "Enter") 
+  {
     const command = cmd.inputElement.value;
     cmd.clearCommand();
     cmd.runCommand(command);

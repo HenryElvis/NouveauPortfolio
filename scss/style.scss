@@ -181,9 +181,17 @@ body
     {
         width: 20rem;
 
+        text-align: center;
+
+        img
+        {
+            display: inline-block;
+        }
+
         p
         {
             color: $text_color;
+            text-align: start;
         }
     }
 }

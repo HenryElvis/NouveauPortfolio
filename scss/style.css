@@ -140,9 +140,14 @@ body {
 }
 #project div {
   width: 20rem;
+  text-align: center;
+}
+#project div img {
+  display: inline-block;
 }
 #project div p {
   color: #FFFFFF;
+  text-align: start;
 }
 
 footer {
