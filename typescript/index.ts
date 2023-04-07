@@ -1,8 +1,17 @@
+interface CommandsList {
+  [key: string]: string;
+}
+
 class CMD {
     public inputElement: HTMLInputElement;
     public isCmdHide = true;
     private outputElement: HTMLDivElement;
-    private result: string = '';
+
+    private commands: CommandsList = {
+        help: 'help - affiche cette aide \n contact - affiche mes informations de contact',
+        clear: "",
+        contact: "contact - affiche mes informations de contact",
+    };
 
     constructor(inputId: string, outputId: string) {
       this.inputElement = document.getElementById(inputId) as HTMLInputElement;
@@ -20,28 +29,20 @@ class CMD {
     }
     
     public runCommand(command: string) {
-      switch(command) {
-        case "help":
-            this.result = "Output:\n" + "Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact";
+      if (command in this.commands) 
+      {
+        if (command == "clear")
+          this.clearCommand();
+        else
           this.writeOutput("Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact \n clear - efface l'écran");
-          break;
-        case "contact":
-            this.result = "Output:\n" + "Email :";
-          this.writeOutput("Email : elvishenry2402@gmail.com \n Téléphone : 07 68 94 94 89");
-          break;
-        case "clear":
-            this.clearCommand();
-            break;
-        default:
-            this.result = "Output:\n" + `Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`;
-          this.writeOutput(`Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`);
       }
+      else
+        this.writeOutput(`Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`);
     }
 
     public clearCommand() {
         this.inputElement.value = '';
         this.outputElement.textContent = '';
-        this.result = '';
       }
     
     private writeOutput(message: string) {
