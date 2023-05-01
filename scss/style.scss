@@ -322,3 +322,14 @@ footer
 // Clean with mixins / extends ...
 // Add some grid for projects
 // Structure folder and files
+
+#wrapper 
+{
+    border: 1px red solid;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+}

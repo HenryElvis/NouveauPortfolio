@@ -112,3 +112,27 @@ window.addEventListener("focus", () =>
 {
   titleAnim.style.animationPlayState = "running";
 });
+
+
+// ----------------- SCROLL -----------------
+
+const section1 = document.getElementById('section1')!;
+const section2 = document.getElementById('section2')!;
+const section1Height = section1.offsetHeight;
+
+// On ajoute un gestionnaire d'événement pour la fenêtre qui se déclenche lorsqu'on scroll
+window.addEventListener('scroll', () => 
+{
+});
+
+const section = document.getElementById('wrapper') as HTMLElement;
+const threshold = 500; // seuil à partir duquel la section doit s'arrêter de défiler
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  if (scrollY <= threshold) {
+    section.style.transform = `translateY(${scrollY}px)`;
+  }
+});
+
+// stop scrolling until animation is done

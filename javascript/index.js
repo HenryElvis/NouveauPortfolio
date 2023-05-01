@@ -76,3 +76,19 @@ window.addEventListener("blur", function () {
 window.addEventListener("focus", function () {
     titleAnim.style.animationPlayState = "running";
 });
+// ----------------- SCROLL -----------------
+var section1 = document.getElementById('section1');
+var section2 = document.getElementById('section2');
+var section1Height = section1.offsetHeight;
+// On ajoute un gestionnaire d'événement pour la fenêtre qui se déclenche lorsqu'on scroll
+window.addEventListener('scroll', function () {
+});
+var section = document.getElementById('wrapper');
+var threshold = 500; // seuil à partir duquel la section doit s'arrêter de défiler
+window.addEventListener('scroll', function () {
+    var scrollY = window.scrollY;
+    if (scrollY <= threshold) {
+        section.style.transform = "translateY(".concat(scrollY, "px)");
+    }
+});
+// stop scrolling until animation is done
