@@ -3,6 +3,14 @@ interface CommandsList {
 }
 
 class CMD {
+
+  private cmdCommand = {
+    "help": "help - affiche cette aide \n contact - affiche mes informations de contact \n clear - efface l'écran",
+    "contact": "contact -email \n contact -phone",
+    "contact -email": "elvishenry2402@gmail.com",
+    "contact -phone": "07 68 94 94 89",
+  }
+
     public inputElement: HTMLInputElement;
     public isCmdHide = true;
     private outputElement: HTMLDivElement;
@@ -34,14 +42,35 @@ class CMD {
       this.focusInput();
     }
     
-    public runCommand(command: string) 
-    {
-      if (command in this.commands) 
+    public runCommand(command: string) {
+
+      if (command === "") return;
+
+      if (command in this.cmdCommand) 
       {
-        if (command == "clear")
-          this.clearCommand();
-        else
-          this.writeOutput(this.commands[command]);
+        // this.result = "Output:\n" + this.cmdCommand[command];
+      }
+      else
+      {
+        this.result = "Output:\n" + `Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`;
+        this.writeOutput(this.result);
+      }
+
+      switch(command) {
+        case "help":
+            this.result = "Output:\n" + "Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact";
+          this.writeOutput("Liste des commandes disponibles : \n help - affiche cette aide \n contact - affiche mes informations de contact \n clear - efface l'écran");
+          break;
+        case "contact":
+            this.result = "Output:\n" + "Email :";
+          this.writeOutput("Email : elvishenry2402@gmail.com \n Téléphone : 07 68 94 94 89");
+          break;
+        case "clear":
+            this.clearCommand();
+            break;
+        default:
+            this.result = "Output:\n" + `Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`;
+          this.writeOutput(`Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`);
       }
       else
         this.writeOutput(`Commande inconnue : ${command}. Tapez 'help' pour afficher la liste des commandes disponibles.`);
