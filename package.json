@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/HenryElvis/NouveauPortfolio#readme",
   "dependencies": {
+    "ejs": "^3.1.9",
     "react": "^18.2.0",
     "sass": "^1.57.1"
   },
