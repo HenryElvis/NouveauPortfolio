@@ -212,6 +212,9 @@ footer article :hover p, footer article :hover i {
     font-size: 4rem;
     padding-top: 1em;
   }
+  #project {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
 }
 @media screen and (max-width: 850px) {
   #title {

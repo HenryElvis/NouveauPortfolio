@@ -296,10 +296,16 @@ footer
             padding-top: 1em;
         }
     }
+
+    #project
+    {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
 }
 
 @media screen and (max-width: 850px)
 {
+
     #title
     {
         width: 40em;
